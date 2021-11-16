@@ -1,0 +1,12 @@
+C:\Users\1\source\repos\mvvmtest\ioctest\bin\Debug\net5.0\ioctest.deps.json
+C:\Users\1\source\repos\mvvmtest\ioctest\bin\Debug\net5.0\ioctest.dll
+C:\Users\1\source\repos\mvvmtest\ioctest\bin\Debug\net5.0\ref\ioctest.dll
+C:\Users\1\source\repos\mvvmtest\ioctest\bin\Debug\net5.0\ioctest.pdb
+C:\Users\1\source\repos\mvvmtest\ioctest\obj\Debug\net5.0\ioctest.csproj.AssemblyReference.cache
+C:\Users\1\source\repos\mvvmtest\ioctest\obj\Debug\net5.0\ioctest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\1\source\repos\mvvmtest\ioctest\obj\Debug\net5.0\ioctest.AssemblyInfoInputs.cache
+C:\Users\1\source\repos\mvvmtest\ioctest\obj\Debug\net5.0\ioctest.AssemblyInfo.cs
+C:\Users\1\source\repos\mvvmtest\ioctest\obj\Debug\net5.0\ioctest.csproj.CoreCompileInputs.cache
+C:\Users\1\source\repos\mvvmtest\ioctest\obj\Debug\net5.0\ioctest.dll
+C:\Users\1\source\repos\mvvmtest\ioctest\obj\Debug\net5.0\ref\ioctest.dll
+C:\Users\1\source\repos\mvvmtest\ioctest\obj\Debug\net5.0\ioctest.pdb

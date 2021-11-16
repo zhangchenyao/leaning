@@ -1,0 +1,12 @@
+C:\Users\1\source\repos\mvvmtest\mvvmtest\bin\Debug\net5.0-windows\mvvmtest.deps.json
+C:\Users\1\source\repos\mvvmtest\mvvmtest\bin\Debug\net5.0-windows\mvvmtest.dll
+C:\Users\1\source\repos\mvvmtest\mvvmtest\bin\Debug\net5.0-windows\ref\mvvmtest.dll
+C:\Users\1\source\repos\mvvmtest\mvvmtest\bin\Debug\net5.0-windows\mvvmtest.pdb
+C:\Users\1\source\repos\mvvmtest\mvvmtest\obj\Debug\net5.0-windows\mvvmtest.csproj.AssemblyReference.cache
+C:\Users\1\source\repos\mvvmtest\mvvmtest\obj\Debug\net5.0-windows\mvvmtest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\1\source\repos\mvvmtest\mvvmtest\obj\Debug\net5.0-windows\mvvmtest.AssemblyInfoInputs.cache
+C:\Users\1\source\repos\mvvmtest\mvvmtest\obj\Debug\net5.0-windows\mvvmtest.AssemblyInfo.cs
+C:\Users\1\source\repos\mvvmtest\mvvmtest\obj\Debug\net5.0-windows\mvvmtest.csproj.CoreCompileInputs.cache
+C:\Users\1\source\repos\mvvmtest\mvvmtest\obj\Debug\net5.0-windows\mvvmtest.dll
+C:\Users\1\source\repos\mvvmtest\mvvmtest\obj\Debug\net5.0-windows\ref\mvvmtest.dll
+C:\Users\1\source\repos\mvvmtest\mvvmtest\obj\Debug\net5.0-windows\mvvmtest.pdb
