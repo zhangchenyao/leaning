@@ -1,0 +1,58 @@
+﻿<Window x:Class="WaveformGraphEditor.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WaveformGraphEditor"
+        mc:Ignorable="d"
+        Title="Window1" Height="450" Width="800"
+    xmlns:avalonDockProperties="clr-namespace:AvalonDock.Properties;assembly=AvalonDock">
+    <Window.Resources>
+       
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            
+            <ColumnDefinition Width="0.2*" />
+            
+            <ColumnDefinition Width="0.8*" />
+            
+        </Grid.ColumnDefinitions>
+        
+        <StackPanel>
+            
+            <Button  Width="100"
+                     Height="50"
+                     Margin="10"
+                     Content="button"
+                     Click="Button_Click" />
+            
+        </StackPanel>
+        
+        <DockingManager  Name="dockM"
+                        Grid.Column="1">
+            
+            <LayoutRoot>
+                
+                <LayoutPanel>
+                    
+                    <LayoutDocumentPaneGroup>
+                        
+
+                        <LayoutDocumentPane x:Name="docGrup" >
+                            
+                            <LayoutDocument Title="444"  >
+                                
+                            </LayoutDocument>
+                        </LayoutDocumentPane>
+
+                    </LayoutDocumentPaneGroup>
+                    
+                </LayoutPanel>
+                
+            </LayoutRoot>
+            
+        </DockingManager>
+
+    </Grid>
+</Window>

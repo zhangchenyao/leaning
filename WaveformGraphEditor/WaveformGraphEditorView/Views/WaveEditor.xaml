@@ -1,0 +1,190 @@
+﻿<UserControl x:Class="WaveformGraphEditor.Views.WaveEditor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:views="clr-namespace:WaveformGraphEditorView.Views"
+             mc:Ignorable="d"
+             d:DesignHeight="900"
+             d:DesignWidth="1800">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Line"
+                   x:Key="GridLineStyle">
+                <Setter Property="Stroke"
+                        Value="#ffffff"></Setter>
+                <Setter Property="StrokeThickness"
+                        Value="2"></Setter>
+            </Style>
+            <Style TargetType="Line"
+                   x:Key="GridLine1Style">
+                <Setter Property="Stroke"
+                        Value="#ffffff"></Setter>
+                <Setter Property="StrokeThickness"
+                        Value="1"></Setter>
+            </Style>
+
+            <Style TargetType="TextBlock"
+                   x:Key="YTextStyle">
+                <Setter Property="HorizontalAlignment"
+                        Value="Left"></Setter>
+                <Setter Property="VerticalAlignment"
+                        Value="Top"></Setter>
+                <Setter Property="Width"
+                        Value="80"></Setter>
+                <Setter Property="Foreground"
+                        Value="White"></Setter>
+            </Style>
+            <Style TargetType="TextBlock"
+                   x:Key="XTextStyle">
+                <Setter Property="HorizontalAlignment"
+                        Value="Left"></Setter>
+                <Setter Property="VerticalAlignment"
+                        Value="Top"></Setter>
+                <Setter Property="Width"
+                        Value="80"></Setter>
+                <Setter Property="Foreground"
+                        Value="White"></Setter>
+            </Style>
+            
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid Background="#2e2e2e">
+        <Canvas Height="800"
+                Name="Canvas1"
+                Width="1600"
+                Background="Blue"
+                Margin="180,50" PreviewMouseMove="Canvas_PreviewMouseMove" >
+            <Image Name="image" Margin="1" Height="800" Width="1598"></Image>
+            
+            <Path Stroke="{DynamicResource StaticForeground1}"  StrokeThickness="2" >
+                <Path.Data>
+                    <GeometryGroup>
+                        <LineGeometry StartPoint="0,0"
+                                      EndPoint="1600,0">
+                        </LineGeometry>
+                        <LineGeometry StartPoint="0,200"
+                                      EndPoint="1600,200">
+                            
+                        </LineGeometry>
+                        <LineGeometry StartPoint="0,400"
+                                      EndPoint="1600,400">
+                        </LineGeometry>
+                        <LineGeometry StartPoint="0,600"
+                                      EndPoint="1600,600">
+                        </LineGeometry>
+                        <LineGeometry StartPoint="0,800"
+                                      EndPoint="1600,800">
+                        </LineGeometry>
+                        <LineGeometry StartPoint="0,0"
+                                      EndPoint="0,800">
+                        </LineGeometry>
+                        <LineGeometry StartPoint="400,0"
+                                      EndPoint="400,800">
+                        </LineGeometry>
+                        <LineGeometry StartPoint="800,0"
+                                      EndPoint="800,800">
+                        </LineGeometry>
+                        <LineGeometry StartPoint="1200,0"
+                                      EndPoint="1200,800">
+                        </LineGeometry>
+                        <LineGeometry StartPoint="1600,0"
+                                      EndPoint="1600,800">
+                        </LineGeometry>
+
+                    </GeometryGroup>
+                </Path.Data>
+            </Path>
+            <Path Stroke="{DynamicResource StaticForeground1}" StrokeThickness="1">
+                <Path.Data>
+                    <GeometryGroup>
+                        <LineGeometry StartPoint="0,100"
+                                      EndPoint="1600,100">
+                            
+                        </LineGeometry>
+                        <LineGeometry StartPoint="0,300"
+                                      EndPoint="1600,300">
+                        </LineGeometry>
+                        <LineGeometry StartPoint="0,500"
+                                      EndPoint="1600,500">
+                        </LineGeometry>
+                        <LineGeometry StartPoint="0,700"
+                                      EndPoint="1600,700">
+                        </LineGeometry>
+                        <LineGeometry StartPoint="200,0"
+                                      EndPoint="200,800">
+                        </LineGeometry>
+                        <LineGeometry StartPoint="600,0"
+                                      EndPoint="600,800">
+                        </LineGeometry>
+                        <LineGeometry StartPoint="1000,0"
+                                      EndPoint="1000,800">
+                        </LineGeometry>
+                        <LineGeometry StartPoint="1400,0"
+                                      EndPoint="1400,800">
+                        </LineGeometry>
+                    </GeometryGroup>
+                </Path.Data>
+            </Path>
+        </Canvas>
+        <!--#region Y轴标识-->
+        <ItemsControl HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      Margin="80,40"
+                      Height="auto"
+                      Width="80"
+                      ItemsSource="{Binding YList}"
+                      Panel.ZIndex="3">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid Height="100">
+                        <TextBlock  Style="{StaticResource YTextStyle}"
+                                    Text="{Binding}"></TextBlock>
+                    </Grid>
+
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+
+
+        <!--#endregion-->
+
+        <!--#region X轴标识-->
+        <ItemsControl HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      Margin="180,850,100,0"
+                      Height="40"
+                      Width="1600"
+                      ItemsSource="{Binding  XTags}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid  Width="200"
+                           Height="60">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.5*"></RowDefinition>
+                            <RowDefinition Height="0.5*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <TextBlock  Grid.Row="0"
+                                    Style="{StaticResource YTextStyle}"
+                                    Text="{Binding Time}"></TextBlock>
+                        <TextBlock Grid.Row="1"
+                                   Style="{StaticResource XTextStyle}"
+                                   Text="{Binding Count}"></TextBlock>
+                    </Grid>
+
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+
+
+        <!--#endregion-->
+    </Grid>
+</UserControl>

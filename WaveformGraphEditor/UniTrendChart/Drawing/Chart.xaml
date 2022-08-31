@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="UniTrendChart.Drawing.Chart"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:UniTrendChart.Drawing"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             Name="chart"
+             d:DesignHeight="450"
+             d:DesignWidth="800"
+             mc:Ignorable="d" Loaded="chart_Loaded">
+    <Grid Grid.Row="1" Margin="20">
+        <local:Plot x:Name="bitmap" Margin="1"
+                    DrawQuality="{Binding ElementName=chart, Path=DrawQuality, Mode=TwoWay}"
+                    IsAutoScal="{Binding ElementName=chart, Path=IsAutoScal, Mode=TwoWay}"  
+                    OnlyDisplaySelect="{Binding ElementName=chart, Path=OnlyDisplaySelect, Mode=TwoWay}"
+                    IsCursorTimeVisible="{Binding ElementName=chart, Path=IsCursorTimeVisible, Mode=TwoWay}"
+                    IsCursorVoltageVisible="{Binding ElementName=chart, Path=IsCursorVoltageVisible, Mode=TwoWay}"                    
+                    />
+        <local:AxisGrid x:Name="axisGrid"
+                        Panel.ZIndex="99"
+                        XGridCount="{Binding ElementName=chart, Path=XGridCount,Mode=TwoWay}"                        
+                        YGridCount="{Binding ElementName=chart, Path=YGridCount,Mode=TwoWay}"/>
+        <local:MouseNavigation x:Name="mouseNavigation" Margin="1" IsZoomX="{Binding ElementName=chart, Path=IsZoomX}" DataContext="{Binding}"    Panel.ZIndex="98"
+                               IsZoomY="{Binding ElementName=chart, Path=IsZoomY}"
+                               ZoomEnable="{Binding ElementName=chart, Path=ZoomEnable, Mode=TwoWay}"
+                               RenderFlag="{Binding ElementName=bitmap, Path=RenderFlag, Mode=TwoWay}"
+                               IsCursorXVisible="{Binding ElementName=chart, Path=IsCursorTimeVisible, Mode=TwoWay}"
+                               IsCursorYVisible="{Binding ElementName=chart, Path=IsCursorVoltageVisible, Mode=TwoWay}"
+                               SliceX0="{Binding ElementName=chart, Path=SliceX0, Mode=TwoWay}"
+                               SliceX1="{Binding ElementName=chart, Path=SliceX1, Mode=TwoWay}"
+                               SliceY0="{Binding ElementName=chart, Path=SliceY0, Mode=TwoWay}"
+                               SliceY1="{Binding ElementName=chart, Path=SliceY1, Mode=TwoWay}"
+                               />
+        <!--<chart1:Axis Panel.ZIndex="999"
+                         AxisType="X"
+                         GridCount="{Binding ElementName=axisGrid, Path=XGridCount}"
+                         Range="{Binding ElementName=bitmap, Path=XRange}" />
+            <chart1:Axis Panel.ZIndex="9999"
+                         AxisType="Y"
+                         GridCount="{Binding ElementName=axisGrid, Path=YGridCount}"
+                         Range="{Binding ElementName=bitmap, Path=YRange}" />-->
+    </Grid>
+</UserControl>

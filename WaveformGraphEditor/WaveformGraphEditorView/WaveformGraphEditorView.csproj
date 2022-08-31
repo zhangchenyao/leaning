@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dirkster.AvalonDock" Version="4.70.2" />
+    <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CommonTools\CommonTools.csproj" />
+    <ProjectReference Include="..\MenuManagement\MenuManagement.csproj" />
+    <ProjectReference Include="..\SericeTool\SericeTool.csproj" />
+    <ProjectReference Include="..\UniTrendChart\UniTrendChart.csproj" />
+    <ProjectReference Include="..\WaveEditorModel\WaveEditorModel.csproj" />
+    <ProjectReference Include="..\WpfBase\WpfBase.csproj" />
+    <ProjectReference Include="..\WpfControlBase\WpfControlBase.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\WaveEditor.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="MainWindow.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\WaveEditor.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+</Project>

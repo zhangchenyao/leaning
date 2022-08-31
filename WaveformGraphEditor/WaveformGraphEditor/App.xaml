@@ -1,0 +1,15 @@
+﻿<Application x:Class="WaveformGraphEditor.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Startup="MainStar">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/MessageBoxExStyle.xaml" />
+                <ResourceDictionary Source="Styles/MenuStyles.xaml" />
+                <ResourceDictionary Source="Styles/BaseStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+        
+    </Application.Resources>
+</Application>

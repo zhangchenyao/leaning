@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Page Remove="Styles\MenuStyles.xaml" />
+    <Page Remove="Styles\MessageBoxExStyle.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Styles\MenuStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Styles\MessageBoxExStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dirkster.AvalonDock" Version="4.70.2" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="6.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Utilities" Version="17.2.32505.113" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MenuManagement\MenuManagement.csproj" />
+    <ProjectReference Include="..\SericeTool\SericeTool.csproj" />
+    <ProjectReference Include="..\WaveEditorModel\WaveEditorModel.csproj" />
+    <ProjectReference Include="..\WaveformGraphEditorView\WaveformGraphEditorView.csproj" />
+    <ProjectReference Include="..\WpfBase\WpfBase.csproj" />
+    <ProjectReference Include="..\WpfControlBase\WpfControlBase.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,94 @@
+﻿<Window x:Class="WaveformGraphEditor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vmodel1="clr-namespace:WaveEditorModel.VModel.VModel;assembly=WaveEditorModel"
+        d:DataContext="{d:DesignInstance Type=vmodel1:MainWindowMode}"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Height="1040"
+        Width="1900" 
+        WindowStyle="None"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown_1"
+        AllowsTransparency="True">
+
+    <Window.Resources>
+        
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition ></RowDefinition>
+            <RowDefinition Height="30" ></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0"
+              Background="Black">
+            <Button Height="38"
+                    Width="38"
+                    Background="Transparent"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Click="CloseButton_Click">
+                <Canvas Margin="0"
+                        Height="24"
+                        Width="24">
+                    <Line X1="0"
+                          Y1="0"
+                          X2="24"
+                          Y2="24"
+                          Stroke="White"
+                          StrokeThickness="2"></Line>
+                    <Line X1="0"
+                          Y1="24"
+                          X2="24"
+                          Y2="0"
+                          Stroke="White"
+                          StrokeThickness="2"></Line>
+                </Canvas>
+            </Button>
+            <Menu Margin="40,8,8,8"
+                   Height="38"
+                  HorizontalAlignment="Left" Background="Black" Foreground="White"
+                  x:Name="menu"
+                   Style="{DynamicResource MenuStyle1}" >
+                <MenuItem Style="{DynamicResource MenuItemStyle1}"
+                          Header="文件">
+                    <MenuItem Style="{DynamicResource MenuItemStyle1}" Header="新建" Click="NewFile_Click"></MenuItem>
+                </MenuItem>
+                <MenuItem Style="{DynamicResource MenuItemStyle1}" Header="视图">
+                    <MenuItem Header="工具箱" Click="工具箱MenuItem_Click"></MenuItem>
+                </MenuItem>
+
+            </Menu>
+            
+        </Grid>
+        <Grid Grid.Row="1" Background="Black"></Grid>
+        <Grid Grid.Row="2">
+            <!--#region -->
+            <DockingManager Name="dockM">
+                <LayoutRoot>
+                    <LayoutPanel>
+                        <LayoutDocumentPaneGroup DockHeight="*"
+                                                 DockWidth="*">
+                            <LayoutDocumentPane x:Name="docGrup"
+                                                DockHeight="*"
+                                                DockWidth="*" >
+                                
+                            </LayoutDocumentPane>
+                            
+                        </LayoutDocumentPaneGroup>
+
+                    </LayoutPanel>
+
+                </LayoutRoot>
+
+            </DockingManager> 
+            <!--#endregion-->
+
+           
+        </Grid>
+        <Grid Grid.Row="3" Background="#2e2e2e"></Grid>
+    </Grid>
+</Window>

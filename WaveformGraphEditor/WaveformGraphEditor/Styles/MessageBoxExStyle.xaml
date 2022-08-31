@@ -1,0 +1,113 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <SolidColorBrush x:Key="BackGroundStatic1"  Color="#2e2e2e"></SolidColorBrush>
+    <SolidColorBrush  x:Key="StaticBackground2" Color="#202020"></SolidColorBrush>
+    <SolidColorBrush x:Key="StaticForeground1" Color="#fefefe"></SolidColorBrush>
+    <ControlTemplate x:Key="WindowTemplateKey"
+                     TargetType="{x:Type Window}">
+        <Border Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}">
+            <Grid>
+                <AdornerDecorator>
+                    <ContentPresenter />
+                </AdornerDecorator>
+                <ResizeGrip Visibility="Collapsed"
+                            IsTabStop="false"
+                            HorizontalAlignment="Right"
+                            x:Name="WindowResizeGrip"
+                            VerticalAlignment="Bottom" />
+            </Grid>
+        </Border>
+        <ControlTemplate.Triggers>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="ResizeMode"
+                               Value="CanResizeWithGrip" />
+                    <Condition Property="WindowState"
+                               Value="Normal" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Visibility"
+                        TargetName="WindowResizeGrip"
+                        Value="Visible" />
+            </MultiTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="BaseWindowControlTemplate"
+                     TargetType="{x:Type Window}">
+        <DockPanel LastChildFill="True">
+            <Border Width="Auto"
+                    Height="auto"
+                    DockPanel.Dock="Top"
+                    Background="{DynamicResource BackGroundStatic1}"
+                    BorderBrush="{DynamicResource BackGroundStatic1}"
+                    BorderThickness="4"
+                    CornerRadius="5"
+                    x:Name="borderTitle">
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" Background="{StaticResource BackGroundStatic1}">
+                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Text="{TemplateBinding Title}" Foreground="{TemplateBinding Foreground}"></TextBlock>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <AdornerDecorator>
+                            <ContentPresenter />
+                        </AdornerDecorator>
+                    </Grid>
+                    <Grid Grid.Row="2" Background="#2e2e2e">
+                        <Button Content="确认"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Center"
+                                Height="40" Name="Enter"
+                                Width="100" Margin="0,0,120,0"
+                                Style="{DynamicResource ButtonStyles1}"
+                                 Command="{Binding EnterClick}"
+                                ></Button>
+                        <Button Content="取消" Height="40"  Name="cancel"  Width="100" Style="{DynamicResource ButtonStyles1}"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Center"
+                                 Margin="0,0,5,0"></Button>
+                    </Grid>
+                </Grid>
+            </Border >
+            
+          
+        </DockPanel>
+    </ControlTemplate>
+    <Style x:Key="BaseWindowStyle"
+           TargetType="{x:Type Window}">
+        <Setter Property="Foreground"
+                Value="{DynamicResource StaticForeground1}" />
+        <Setter Property="Background"
+                Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />
+        <Setter Property="Template"
+                Value="{StaticResource BaseWindowControlTemplate}" />
+
+        <Setter Property="AllowsTransparency"
+                Value="True" />
+        <Setter Property="WindowStyle"
+                Value="None" />
+        <Setter Property="BorderBrush"
+                Value="#FF7097D0" />
+        <Setter Property="BorderThickness"
+                Value="4,4,4,4" />
+        <Style.Triggers>
+            <Trigger Property="ResizeMode"
+                     Value="CanResizeWithGrip">
+                <Setter Property="Template"
+                        Value="{StaticResource WindowTemplateKey}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="ButtonStyles1" TargetType="Button">
+        <Setter Property="Background"
+                Value="{StaticResource StaticBackground2}"></Setter>
+        <Setter Property="Foreground" Value="{StaticResource StaticForeground1}"></Setter>
+        
+    </Style>
+
+</ResourceDictionary>
